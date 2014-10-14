@@ -746,10 +746,14 @@
 {
     if (!_rightMenuViewController) {
         _rightMenuViewController = rightMenuViewController;
+    } else {
+        [self __hideViewController:_rightMenuViewController];
+        _rightMenuViewController = rightMenuViewController;
+    }
+    
+    if (!_rightMenuViewController) {
         return;
     }
-    [self hideViewController:_rightMenuViewController];
-    _rightMenuViewController = rightMenuViewController;
     
     [self addChildViewController:self.rightMenuViewController];
     self.rightMenuViewController.view.frame = self.view.bounds;
