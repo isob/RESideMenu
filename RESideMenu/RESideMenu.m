@@ -757,6 +757,7 @@
     
     [self addChildViewController:self.rightMenuViewController];
     self.rightMenuViewController.view.frame = self.view.bounds;
+    self.rightMenuViewController.view.hidden = YES;
     self.rightMenuViewController.view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     [self.menuViewContainer addSubview:self.rightMenuViewController.view];
     [self.rightMenuViewController didMoveToParentViewController:self];
