@@ -747,7 +747,7 @@
     if (!_rightMenuViewController) {
         _rightMenuViewController = rightMenuViewController;
     } else {
-        [self __hideViewController:_rightMenuViewController];
+        [self hideViewController:_rightMenuViewController];
         _rightMenuViewController = rightMenuViewController;
     }
     
