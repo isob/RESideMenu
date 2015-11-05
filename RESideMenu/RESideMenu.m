@@ -89,12 +89,12 @@
   
     _menuViewControllerTransformation = CGAffineTransformMakeScale(1.5f, 1.5f);
     
-    _scaleContentView = YES;
-    _scaleBackgroundImageView = YES;
-    _scaleMenuView = YES;
+    _scaleContentView = NO;
+    _scaleBackgroundImageView = NO;
+    _scaleMenuView = NO;
     _fadeMenuView = YES;
     
-    _parallaxEnabled = YES;
+    _parallaxEnabled = NO;
     _parallaxMenuMinimumRelativeValue = -15;
     _parallaxMenuMaximumRelativeValue = 15;
     _parallaxContentMinimumRelativeValue = -25;
@@ -106,14 +106,14 @@
     _panFromEdge = YES;
     _panMinimumOpenThreshold = 60.0;
     
-    _contentViewShadowEnabled = NO;
+    _contentViewShadowEnabled = YES;
     _contentViewShadowColor = [UIColor blackColor];
     _contentViewShadowOffset = CGSizeZero;
     _contentViewShadowOpacity = 0.4f;
     _contentViewShadowRadius = 8.0f;
-    _contentViewInLandscapeOffsetCenterX = 30.f;
-    _contentViewInPortraitOffsetCenterX  = 30.f;
-    _contentViewScaleValue = 0.7f;
+    _contentViewInLandscapeOffsetCenterX = 100.f;
+    _contentViewInPortraitOffsetCenterX  = 90.f;
+    _contentViewScaleValue = 1.0f; //0.7f;
 }
 
 #pragma mark -
@@ -734,7 +734,7 @@
    
     [self addChildViewController:self.leftMenuViewController];
     self.leftMenuViewController.view.frame = self.view.bounds;
-    self.leftMenuViewController.view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    self.leftMenuViewController.view.autoresizingMask = UIViewAutoresizingFlexibleWidth ;//| UIViewAutoresizingFlexibleHeight;
     [self.menuViewContainer addSubview:self.leftMenuViewController.view];
     [self.leftMenuViewController didMoveToParentViewController:self];
     
@@ -758,7 +758,7 @@
     [self addChildViewController:self.rightMenuViewController];
     self.rightMenuViewController.view.frame = self.view.bounds;
     self.rightMenuViewController.view.hidden = YES;
-    self.rightMenuViewController.view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    self.rightMenuViewController.view.autoresizingMask = UIViewAutoresizingFlexibleWidth; //| UIViewAutoresizingFlexibleHeight;
     [self.menuViewContainer addSubview:self.rightMenuViewController.view];
     [self.rightMenuViewController didMoveToParentViewController:self];
     
